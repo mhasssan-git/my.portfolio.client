@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,10 @@ import { ExperienceComponent } from './experience/experience.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgModule } from '@angular/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,10 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

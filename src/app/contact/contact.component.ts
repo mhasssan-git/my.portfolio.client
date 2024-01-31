@@ -1,7 +1,7 @@
-
-import {  FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from './contact.service';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-contact',
@@ -10,25 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
   messageSendForm!: FormGroup;
-  
-  constructor(private service:ContactService) {    
-  }
+  loading:boolean=false;
+  buttonDisabled=false;
+
+  constructor(private service: ContactService, public snackBar: MatSnackBar) {}
   ngOnInit(): void {
     this.messageSendForm = new FormGroup({
       Name: new FormControl(null, [Validators.required]),
-      From: new FormControl(null, [Validators.required,Validators.email]),
+      From: new FormControl(null, [Validators.required, Validators.email]),
       Subject: new FormControl(null, [Validators.required]),
       Body: new FormControl(null, [Validators.required]),
     });
   }
-  onSubmit():void{
-    var data=this.messageSendForm.value;
-    var jsData=JSON.stringify(data);
-    this.service.sendMail(JSON.stringify(jsData))
-    .subscribe((res: any)=>{
-      console.log(res);
-    })
+  onSubmit(): void {
+    
+    if (this.messageSendForm.valid) {
+      var data = this.messageSendForm.value;
+      var jsData = JSON.stringify(data);
+      this.loading=true;
+      this.buttonDisabled=true;
+      this.service.sendMail(JSON.stringify(jsData)).subscribe((res: any) => {
+        this.snackBar.open('Email has been sent successfully!',"Close",{
+          duration:1500
+        });
+        this.loading=false;
+        this.buttonDisabled=false;
+        this.messageSendForm.reset();
+        this.messageSendForm.clearValidators();
+
+      });
+    }
+     
   }
 }
- 
-
