@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+
 import {  FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from './contact.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -24,8 +25,10 @@ export class ContactComponent implements OnInit {
     var data=this.messageSendForm.value;
     var jsData=JSON.stringify(data);
     this.service.sendMail(JSON.stringify(jsData))
-    .subscribe(res=>{
+    .subscribe((res: any)=>{
       console.log(res);
     })
   }
 }
+ 
+
