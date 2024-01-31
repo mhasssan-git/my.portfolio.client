@@ -14,6 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     SkillsComponent,
     ProfilesComponent,
     ContactComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
