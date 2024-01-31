@@ -41,7 +41,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HttpClientModule,
     BrowserAnimationsModule,
     MatNativeDateModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

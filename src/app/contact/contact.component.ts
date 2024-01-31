@@ -2,6 +2,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from './contact.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -38,8 +39,13 @@ export class ContactComponent implements OnInit {
         this.messageSendForm.reset();
         this.messageSendForm.clearValidators();
 
+      },(err:any)=>{
+        this.snackBar.open('There is an error occured!',"Close",{
+          duration:1500
+        });
       });
     }
      
   }
+   
 }
