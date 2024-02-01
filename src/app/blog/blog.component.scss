@@ -1,35 +1,35 @@
 /*-------------------------------------
-        4.  About
+        4.  blog
 --------------------------------------*/
-.about {padding: 50px 0 100px;}
-.about-content {padding-top: 100px;}
-/*.single-about-txt*/
-.single-about-txt h3 {
+.blog {padding: 50px 0 50px;}
+.blog-content {padding-top: 50px;}
+/*.single-blog-txt*/
+.single-blog-txt h3 {
     font-size:18px;
     color: #3c4258;
     text-transform: initial;
     line-height: 1.8;
 }
-.single-about-txt p {
+.single-blog-txt p {
     font-size: 15px;
     color: #999fb3;
     padding: 35px 0 43px;
     border-bottom: 1px solid #999fb3;
 }
-.single-about-add-info {
+.single-blog-add-info {
     margin: 35px 0;
 }
-.single-about-add-info h3 {
+.single-blog-add-info h3 {
     color: #636a82;
     font-size: 16px;
     text-transform: capitalize;
 }
-.single-about-add-info p {font-weight:  300;border:  0;padding: 0;margin-top: 3px;}
-/*.single-about-txt*/
+.single-blog-add-info p {font-weight:  300;border:  0;padding: 0;margin-top: 3px;}
+/*.single-blog-txt*/
 
-/*.single-about-img */
-.single-about-img{position: relative;box-shadow: 0 5px 20px rgba(14,25,80,.30);}
-.single-about-img:before {
+/*.single-blog-img */
+.single-blog-img{position: relative;box-shadow: 0 5px 20px rgba(14,25,80,.30);}
+.single-blog-img:before {
     position:  absolute;
     content: " ";
     top: 0;
@@ -38,11 +38,11 @@
     height:  100%;
     background: rgba(31,44,108,.3);
 }
-.single-about-img img {
+.single-blog-img img {
     max-width: 500px;
     height: 468px;
 }
-.about-list-icon{
+.blog-list-icon{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,15 +54,15 @@
     background: #1f2c6c;
 }
 /*.ab-list-icon */
-.about-list-icon ul {
+.blog-list-icon ul {
     display: flex;
 }
-.about-list-icon  ul li a {
+.blog-list-icon  ul li a {
     padding-right: 22px;
     cursor:pointer;
     color: #fff;
 }
-.about-list-icon ul li a {
+.blog-list-icon ul li a {
     cursor: pointer;
     color: #fff;
     display: inline-block;
@@ -74,6 +74,6 @@
     line-height: 28px;
     text-align: center;
 }
-.about-list-icon ul li a i {
+.blog-list-icon ul li a i {
     margin-left: 6px;
 }

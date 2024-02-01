@@ -361,7 +361,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
         7. Experience
 -------------------------------------*/
 .experience {
-    padding: 50px 0 100px;
+    padding: 50px 0 50px;
     border-top: 1px solid #e5ebf2;
 }
 .experience-content {padding-top: 100px;}
@@ -442,7 +442,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
         8. Profiles
 --------------------------------------*/
 .profiles {
-    padding:  50px 0 100px;
+    padding:  50px 0 50px;
     border:  1px solid #e5ebf2;
 }
 
@@ -517,7 +517,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
         9. Portfolio
 --------------------------------------*/
 .portfolio {
-    padding:  50px 0 100px;
+    padding:  50px 0 50px;
     border:  1px solid #e5ebf2;
 }
 
@@ -612,7 +612,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 --------------------------------------*/
 .contact {
     background: #f9fbfd;
-    padding: 50px 0 100px;
+    padding: 50px 0 50px;
 }
 .single-contact-box {padding-top: 100px;}
 .contact-form  .form-group {

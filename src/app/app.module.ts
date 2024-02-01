@@ -19,7 +19,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgModule } from '@angular/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog'
 import { BlogComponent } from "./blog/blog.component";
+import { BlogDetailsComponent } from './blog/blog-details/blog-details.component';
 
 @NgModule({
     declarations: [
@@ -33,7 +35,9 @@ import { BlogComponent } from "./blog/blog.component";
         ProfilesComponent,
         ContactComponent,
         ExperienceComponent,
-        PortfolioComponent
+        PortfolioComponent,
+        BlogComponent,
+        BlogDetailsComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -45,7 +49,7 @@ import { BlogComponent } from "./blog/blog.component";
         BrowserAnimationsModule,
         MatNativeDateModule,
         MatSnackBarModule,
-        BlogComponent
+        MatDialogModule
     ]
 })
 export class AppModule { }
