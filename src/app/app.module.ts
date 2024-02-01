@@ -19,32 +19,33 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgModule } from '@angular/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BlogComponent } from "./blog/blog.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    WelcomeComponent,
-    AboutComponent,
-    EducationComponent,
-    SkillsComponent,
-    ProfilesComponent,
-    ContactComponent,
-    ExperienceComponent,
-    PortfolioComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatNativeDateModule,
-    MatSnackBarModule,
-    
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        WelcomeComponent,
+        AboutComponent,
+        EducationComponent,
+        SkillsComponent,
+        ProfilesComponent,
+        ContactComponent,
+        ExperienceComponent,
+        PortfolioComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatNativeDateModule,
+        MatSnackBarModule,
+        BlogComponent
+    ]
 })
 export class AppModule { }
