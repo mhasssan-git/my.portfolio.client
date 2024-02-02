@@ -19,6 +19,7 @@ export class ContactComponent implements OnInit {
     this.messageSendForm = new FormGroup({
       Name: new FormControl(null, [Validators.required]),
       From: new FormControl(null, [Validators.required, Validators.email]),
+      Phone: new FormControl(null, [Validators.pattern('[- +()0-9]+')]),
       Subject: new FormControl(null, [Validators.required]),
       Body: new FormControl(null, [Validators.required]),
     });
