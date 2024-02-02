@@ -1,22 +1,60 @@
-.modal-body{
-    padding:50px
+.modal-body {
+  padding: 50px;
 }
-.hn{
-    font-size: 30px;
-    margin-bottom: 20px;
+.hn {
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 .be {
-    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .gs {
-    font-weight: 700;
-    color: #242424;
+  font-weight: 700;
+  color: #242424;
 }
-.h4, h4 {
-    font-size: 24px;
-    font-weight: 500;
-    margin: 10px 0px;
-    color:rgb(33, 37, 41);
-    font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif ;
-    text-transform: none;
+.h4,
+h4 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 25px 0px;
+  color: rgb(33, 37, 41);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: none;
+}
+.ss {
+  max-width: 906px;
+}
+
+ol {
+  padding: 10px 0 0 50px;
+  font-size: 14px;
+  color: #333;
+}
+p,
+li {
+  text-rendering: optimizeLegibility;
+  color: #242424;
+  font-weight: 400;
+  font-size: 20px;
+  font-style: normal;
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times,
+    serif;
+}
+p {
+  letter-spacing: -0.03px;
+  margin-bottom: -0.46em;
+  margin-top: 2.14em;
+  word-break: break-word;
+  line-height: 32px;
+}
+.ss {
+  margin-top: 56px;
+}
+
+.ss img {
+  width: 100%;
+}
+
+.close {
+    margin: -23px
 }

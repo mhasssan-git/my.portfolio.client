@@ -1,5 +1,5 @@
 <div
-  class="modal fade"
+  class="modal fade in"
   id="exampleModal"
   tabindex="-1"
   role="dialog"
@@ -8,21 +8,204 @@
 >
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <button
-      type="button"
-      class="close"
-      data-dismiss="modal"
-      aria-label="Close"
-    >
-      <span aria-hidden="true">&times;</span>
-    </button>
+     
       <div class="modal-body">
-       
-       <div>
-        <h1 class="hn be gs">How to deploy Angular application CICD using Github, CodeBuild, CodePipeline and Lambda</h1>
-        <h4>What is CodePipeline</h4>
-        <p>AWS CodePipeline is a continuous delivery service you can use to model, visualize, and automate the steps required to release your software. You can quickly model and configure the different stages of a software release process. CodePipeline automates the steps required to release your software changes continuously</p>
-       </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div>
+          <h1 class="hn be gs">
+            How to deploy Angular application CI/CD using Github, CodeBuild,
+            CodePipeline and Lambda
+          </h1>
+          <hr />
+          <p>
+            In this blog, I am going to demonstrate how to implement CI/CD of an
+            angular application into S3 bucket by using github, CodePipeline and
+            CodeBuild.
+          </p>
+          <h4>What is CodePipeline</h4>
+          <p>
+            AWS CodePipeline is a continuous delivery service you can use to
+            model, visualize, and automate the steps required to release your
+            software. You can quickly model and configure the different stages
+            of a software release process. CodePipeline automates the steps
+            required to release your software changes continuously
+          </p>
+          <div>
+            <p>
+              The following steps are involved to complete the whole process
+            </p>
+            <div>
+              <ol>
+                <li>Create Angular application</li>
+                <li>Create github repositiory for that application</li>
+                <li>Create S3 bucket to deploy that application.</li>
+                <li>Create and configure CodePipeLine</li>
+              </ol>
+            </div>
+            <div class="step">
+              <h4>1. Create Angular application</h4>
+              <p>For this demo, I have created a angular 17 project.</p>
+              <div class="ss">
+                <img src="./../../assets/images/blog/ss/angular.JPG" />
+              </div>
+            </div>
+            <div class="step">
+              <h4>2. Create github repositiory for that application</h4>
+              <p>
+                I have used github as a source control for my appplication. AWS
+                also provides CodeCommit which is a fully managed version
+                control service managed by AWS. Login to your github account,
+                create a new repository, clone the repository in your system.
+                Commit and push you angular application in your newly created
+                repositiory.
+              </p>
+              <div class="ss">
+              <picture>
+                <img src="./../../assets/images/blog/ss/github.JPG" />
+              </picture>
+              </div>
+            </div>
+            <div class="step">
+              <h4>3. Create S3 bucket to deploy that application.</h4>
+              <p>
+                We need to create a S3 bucket where our application will be
+                deployed. We need to allow public access and enable Static
+                website hosting to test the entire process
+              </p>
+              <div class="ss">
+                <img src="../../../assets/images/blog/ss/s3.JPG" />
+              </div>
+              <p>
+                Once creation completed, we need to setup Bucket policy to allow
+                read, edit or delete bucket object.
+              </p>
+            </div>
+            <div class="step">
+              <h4>4. Create and configure CodePipeLine</h4>
+             <div class="step">
+              <p>
+                Once setting up github repositiory and s3 bucket completed, we
+                are now ready to create and configure AWS CodePipeline.
+              </p>
+              <p>Search AWSCodepipline and Click Create pipeline</p>
+              <div class="ss">
+                <picture>
+                <img src="../../../assets/images/blog/ss/ccp.JPG" />
+              </picture>
+              </div>
+             </div>
+              <div class="step">
+                <p>
+                  Select Github as Source provider(I used github version 1),
+                  Connect to Github
+                </p>
+                <p>
+                  Select the repositiory that we have created for this demo.
+                  Select the branch based on which pipleline will start when a
+                  change occurs. I selected master branch for this purpose.
+                </p>
+                <div class="ss">
+                  <img src="../../../assets/images/blog/ss/source.JPG" />
+                </div>
+              </div>
+
+              <p>
+                Select AWS CodeBuild as a build option. We can skip this process
+                if it is a static website.
+              </p>
+              <div class="ss">
+                <img src="../../../assets/images/blog/ss/cbuild.JPG" />
+              </div>
+              <p>
+                At this point, we need to create a new project. We can do this
+                steps in a different way. In that case we need to create a
+                project from CodeBuild before creaing CodePipeline. If we follow
+                that process, we may now select that project from the drop down.
+                For now, we click Create project button and new tab will be open
+              </p>
+              <p>
+                In the Environment section, I choose lambda, Operating System as
+                Amazone Linux and Node.js as runtime for build environemnt. I
+                choose the latest Image for this purpose.
+              </p>
+              <div class="ss">
+                <img src="../../../assets/images/blog/ss/project.JPG" />
+              </div>
+              <p>
+                In the BuildSpec section we need to provide BuildSpec Command
+                either by providing yml file by choosing Use a buildsepc file or
+                Insert build commands. In this case I chose to add build command
+                by selecting Inser build commands opttion and and click Switch
+                to editor.
+              </p>
+              <div class="ss">
+                <img src="../../../assets/images/blog/ss/buildspec.JPG" />
+              </div>
+              <div class="step">
+                <p>
+                  We may choose either Cloud Watch or S3 to monitor Logs. In
+                  this case I choose S3 and select the same S3 bucket where we
+                  are trying to deploy our project
+                </p>
+                <div class="ss">
+                  <img src="../../../assets/images/blog/ss/logs.JPG" />
+                </div>
+              </div>
+              <div class="step">
+                <p>
+                  We may now hit the Continue to CodePipeLine button. New
+                  Project has been created, and it will automatically populated
+                  in te Project Name Dropdown.
+                </p>
+                <div class="ss">
+                  <img src="../../../assets/images/blog/ss/cbuild1.JPG" />
+                </div>
+              </div>
+              <div class="step">
+                <p>
+                  In next step, I select Amazon S3 as Deploy provider. Select
+                  region where your pipeline is. Choose bucket which has prefix
+                  of CodePipeline. It is automatically created since we choose
+                  Default location for Artifact Store in the pipeline settings.
+                </p>
+                <div class="ss">
+                  <img src="../../../assets/images/blog/ss/deploy.JPG" />
+                </div>
+                <p>I leave S3 object key blank.</p>
+                <p>Set <b>Extract file before deploy</b> checked. Click Next</p>
+              </div>
+              <div class="step">
+                <p>Review your pipeline settigns and create pipeline</p>
+                <div class="ss">
+                  <img src="../../../assets/images/blog/ss/review.JPG" />
+                </div>
+                <p>
+                  Once completed, Pipline starts automatically.It starts by
+                  fetching source code from the source control , build the
+                  project and then deploy it in S3 bucket.
+                </p>
+              </div>
+              <div class="step">
+                <div class="ss">
+                  <img src="../../../assets/images/blog/ss/pipeline.JPG" />
+                </div>
+                <p>
+                  After completed, go to the browser and hit the application
+                  link.
+                </p>
+                <p>
+                  To test the process, made some changes in your code base,
+                  Commit and push you change in main branch and you will see the
+                  pipeline execution started again automatically. when it ends,
+                  go to your link again and check the changes that you made.
+                </p>
+                <p>Thanks for reading</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

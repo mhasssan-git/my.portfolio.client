@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 
@@ -8,14 +8,10 @@ import { BlogDetailsComponent } from './blog-details/blog-details.component';
   styleUrl: './blog.component.scss'
 })
 export class BlogComponent {
-  constructor(private dialog: MatDialog) {}
+  
+  constructor() {
+   
+  }
 
-  // openDialog() {
-  //     const dialogConfig = new MatDialogConfig();
-
-  //     dialogConfig.disableClose = false;
-  //     dialogConfig.autoFocus = false;
-
-  //     this.dialog.open(BlogDetailsComponent, dialogConfig);
-  // }
+   
 }
