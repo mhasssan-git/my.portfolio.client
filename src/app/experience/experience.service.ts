@@ -7,6 +7,14 @@ import { experience } from './model/experience';
 export class ExperienceService {
 
   experienceList:experience[]=[
+    new experience("February, 2024","Present","Senior Software Engineer at HP Inc","Kforce Inc",
+    "Texas, USA","•	Developing desktop-based application using C#.NET based on interfacing user query with LLM such as local RAG pipeline using vector database or external GPT."+
+    "•	Design and implement scalable software solutions"),
+    new experience("February, 2023","January 2024","Professional development, Career Break","Maharishi International University",
+    "Iowa, USA","● Algorithm ● Advanced Software Development● Enterprise Architecture● Web Application Programming"
+    +"● Cloud Computing"
+    +"● Modern Programming Practice"
+    +"● Leadership for Technical Manager"),
     new experience("March, 2021","January 2023","Senior Software Engineer/Team Lead","Kaz Software",
     "Dhaka, Bangaladesh","Analyzed, designed and developed a project framework from a legacy Java monolith application into an ASP.NET application using microservices architecture."+
     " Updated, modified, and expanded existing web applications using C#, ASP.NET MVC, and Azure DevOps."+
